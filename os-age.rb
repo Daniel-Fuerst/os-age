@@ -4,7 +4,12 @@ human_readable = ARGV[0] != "--raw"
 root = "/"
 seconds_in_day = 86400
 
-os_name = "OS"
+os_release = File.read("/etc/os-release")
+pretty_name = os_release.lines.at(1)
+name_start = pretty_name.index("\"") + 1
+name_end = pretty_name.rindex("\"") - 1
+
+os_name = pretty_name[name_start..name_end]
 
 age = (Time.now - File.stat(root).mtime).to_i / seconds_in_day
 

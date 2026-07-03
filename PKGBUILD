@@ -1,7 +1,7 @@
 pkgname=os-age
 pkgver=1.0.0
 pkgrel=1
-pkgdesc="Check installation age"
+pkgdesc="Check Linux installation age"
 arch=('any')
 url="https://github.com/Daniel-Fuerst/os-age"
 
